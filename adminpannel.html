@@ -1,0 +1,53 @@
+{% extends "panel-layout.html"%}
+{% block nav %}
+    <nav class="navbar navbar-default" style="background-color: white">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Admin Pannel</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('admin') }}"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+        </ul>
+       </div>
+    </nav>
+{% endblock %}
+{% block container %}
+<style type="text/css">
+td,tr {
+  padding: 10px;
+  text-align: center;
+  height: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+ tr:hover {color:green;
+ 			font-weight:bold; }
+}
+</style>
+<body style="background-color: #fafafa ">
+<div class="container" >
+<p class="col-sm-2"></p>
+<table class=" col-sm-3 ">
+	<div>
+	<tr>
+		<th>Client ID:</th>
+		<th>Facility ID:</th>
+		<th>Date:</th>
+	</tr>
+	</div>
+	{% for row in data %}
+		<div >
+		<tr>
+			<td> {{row[1]}}</td>
+			<td> {{row[2]}}</td>
+			<td> {{row[3]}}</td>
+		</tr>
+		</div>
+	{% endfor %}
+</table>
+<p class="col-sm-2"></p>
+<p class="col-sm-2"></p>
+</div>
+</body>
+
+{% endblock container%}

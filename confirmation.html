@@ -1,0 +1,22 @@
+{% extends "panel-layout.html"%}
+{% block container %}
+<style>
+#des {
+
+  border-radius: 15px;
+  background: #fafafa;
+  padding: 20px; 
+  width: 300px;
+  height: auto; 
+  text-align:center
+} 
+</style>
+<body class="text-center">
+	<div class="container">
+    <legend class="h3 mb-3 font-weight-normal">Booking Confirmation</legend>
+    <center><p id=des>{{title}}</p></center>
+    <center><p id=des>{{des}}</p></center>
+    <center><p id=des>{{date}}</p></center>
+	</div>
+</body>
+{% endblock container %}

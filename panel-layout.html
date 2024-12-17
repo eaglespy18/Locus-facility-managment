@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Locus Facility Managment</title>
+    <style>
+      .footer {
+      position: bottom;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: ;
+      color: black;
+      text-align: center;
+      }
+    </style>
+    
+  <body>
+    {% block nav %}
+    <nav class="navbar navbar-default" style="background-color: white">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">User Pannel</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{{ url_for('userpannel') }}" style="background-color: #fafafa"><span class="glyphicon glyphicon-home" style="background-color: #fafafa"></span></a></li>
+          <li><a href="{{ url_for('mybookings')}}">My Bookings</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+        </ul>
+       </div>
+    </nav>
+    {% endblock %}
+    <div class="text-center">
+      <div class="container">
+        {% with messages= get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{category}}"> {{message}} </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith%}
+      </div>
+    </div>
+    {% block container %}{% endblock %}
+    <footer class="footer">
+      <div class="container">  
+          </br>
+          </br>
+          <div class="footer-copyright text-center py-3">© 2019 Copyright: Locus FMS</div>
+      </div>
+    </footer>
+  </body>
+
+</html>
+{% extends "bootstrap/base.html"%}

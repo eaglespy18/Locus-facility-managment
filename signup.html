@@ -1,0 +1,41 @@
+{% extends "layout.html"%}
+{% block container%}
+<body class="text-center">
+	<div class="container">
+	<form method="POST" action="" class="form-horizontal">
+		{{ form.hidden_tag() }}
+		<fieldset>
+			<legend class="h3 mb-3 font-weight-normal">Sign Up</legend>
+			<div class="form-group">
+				<div class="control-label col-sm-5">{{ form.name.label()}}</div>
+				<div class="col-sm-3">{{ form.name(class_="form-control")}}</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-sm-5">{{ form.email.label()}}</div>
+				<div class="col-sm-3">{{ form.email(class_="form-control")}}</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-sm-5">{{ form.phoneNum.label()}}</div>
+				<div class="col-sm-3">{{ form.phoneNum(class_="form-control")}}</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-sm-5">{{ form.username.label()}}</div>
+				<div class="col-sm-3">{{ form.username(class_="form-control")}}</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-sm-5">{{ form.password.label()}}</div>
+				<div class="col-sm-3">{{ form.password(class_="form-control")}}</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-sm-5">{{ form.confirmPassword.label()}}</div>
+				<div class="col-sm-3">{{ form.confirmPassword(class_="form-control")}}</div>
+			</div>
+		</fieldset>
+		<div>
+			{{ form.submit(class="btn btn-primary")}}
+		</div>
+	</form>
+	</div>
+	{% block signup %}{% endblock signup %}
+</body>
+{% endblock container%}
